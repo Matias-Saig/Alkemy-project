@@ -1,0 +1,12 @@
+@mixin flex($direction, $wrap, $content, $items) {
+  display: flex;
+  flex-flow: $direction $wrap;
+  justify-content: $content;
+  align-items: $items;
+}
+
+@mixin responsive($medida) {
+  @media screen and (max-width: $medida) {
+    @content;
+  }
+}

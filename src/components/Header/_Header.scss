@@ -1,0 +1,46 @@
+@use "../../style/vars" as var;
+@use "../../style/mixin" as mix;
+
+.header {
+  background-color: var.$c-base;
+  padding-top: 1rem;
+  @include mix.flex(row, wrap, space-around, end);
+  text-transform: uppercase;
+
+  &__title {
+    width: 75%;
+    text-indent: 4rem;
+    font-size: 5rem;
+    letter-spacing: 5px;
+    font-weight: bolder;
+    color: var.$c-base_light;
+  }
+
+  &__img {
+    width: 25%;
+  }
+}
+
+.navbar {
+  background: var.$c-base_mid;
+  width: 100%;
+
+  &__list {
+    @include mix.flex(row, nowrap, space-around, end);
+
+    &__item__link {
+      padding: 1rem 0;
+      width: 100%;
+      color: var.$c-light;
+      letter-spacing: 1px;
+      font-weight: bold;
+      text-align: center;
+             
+      &:hover {
+        background: var.$c-base_light;
+        color: var.$c-active-breeze;
+      }
+
+    }
+  }
+}

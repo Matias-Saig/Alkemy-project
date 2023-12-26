@@ -1,0 +1,18 @@
+@use './vars' as var;
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body {
+    background: url(../assets/Header/store-4156934_1280.png) right no-repeat;
+    background-size: contain;
+    color: var.$c-light;
+    font-family: 'Fira Sans', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+p {
+    font-size:1.15rem;
+}
+
+
+  
