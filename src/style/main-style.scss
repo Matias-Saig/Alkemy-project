@@ -4,6 +4,7 @@
 
 // componentes
 @forward '../components/Header/Header'; 
+@forward '../components/Loading/loading';
 
-
-
+// pages
+@forward '../pages/Home/Home';

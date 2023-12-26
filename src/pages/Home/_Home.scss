@@ -1,0 +1,85 @@
+@use "../../style/vars" as var;
+@use "../../style/mixin" as mix;
+
+.list {
+  @include mix.flex(row, wrap, center, stretch);
+  padding: 2rem;
+  gap: 2.5rem;
+  background: var.$c-base_mid;
+
+  &__title {
+    width: 80%;
+    text-align: center;
+    font-size: 2.5rem;
+    color: var.$c-light;
+    padding-bottom: 0.5rem;
+    border-bottom: dashed 2px var.$c-base_mid_light;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+}
+
+.card {
+  @include mix.flex(column, wrap, start, center);
+  background: var.$c-light;
+  color: var.$c_base;
+  gap: 0.5rem;
+  padding: 0.25rem;
+  width: 30%;
+  filter: var.$shadow;
+
+  &__title {
+    font-size: 1.3rem;
+    text-align: center;
+    width: 100%;
+    padding-top: 0.5rem;
+    background-color: var.$c-base;
+    color: var.$c-light;
+    padding: 1rem 0.5rem;
+    height: 8rem;
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    color: var.$c-base_mid_light;
+  }
+
+  &__container {
+    @include mix.flex(row, nowrap, center, center);
+    background: white;
+    padding: 1rem 0;
+    width: 100%;
+
+    .card__image {
+      object-fit: contain;
+      width: 15rem;
+      height: 15rem;
+    }
+  }
+
+  &__price {
+    margin-top: 1rem;
+    font-size: 1.75rem;
+    font-weight: bold;
+  }
+
+  &__button {
+    padding: 0.5rem 0;
+    width: 60%;
+    background: var.$c-active-breeze;
+    color: var.$c-light;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    filter: var.$shadow;
+
+    &:hover {
+      background: var.$c-base_mid_light;
+      filter: drop-shadow(unset);
+      filter: var.$shadow-hover;
+    }
+  }
+}

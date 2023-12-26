@@ -13,9 +13,13 @@ function useFetch(url) {
         setLoading(false);
       })
       .catch((error) => setError(error));
-  }, [url]); 
+  }, [url]);
 
-  return { data, loading, error };
+  useEffect(() => {
+    error && alert("404 - Error del servidor \n\n intentelo más tarde");
+  }, [error]);
+
+  return { data, loading };
 }
 
 export default useFetch;
