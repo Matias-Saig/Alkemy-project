@@ -11,10 +11,10 @@ function App() {
         <home />
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           <Route
               path="/category/:categoryId"
-              element=''
+              element={<Home />}
             />
             <Route path="/item/:itemId" element='' />
 

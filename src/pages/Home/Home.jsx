@@ -1,8 +1,13 @@
+import { useParams } from "react-router";
 import useFetch from "../../Hooks/useFetch";
-import Loading from "../../components/Loading/Loading";
+import useFetchFilter from "../../Hooks/useFetchFilter";
+import AllProducts from "../../components/Products/AllProducts";
+import FilterProducts from "../../components/Products/FilterProducts";
 
 function Home() {
   const { data, loading } = useFetch("https://fakestoreapi.com/products");
+
+  const { categoryId } = useParams();
 
   // Se agrega propiedad stock a lista de productos
   let num = 0;
@@ -11,24 +16,17 @@ function Home() {
     elem.stock = num;
   }
 
-  return (
-    <section className="list">
-      <h2 className="list__title">Estos son nuestros productos</h2>
-      {loading && <Loading type="text" />}
+  // filtrado de productos con custom Hook
+  const { itemsFilter } = useFetchFilter({ id: categoryId, data: data });
 
-      {data.map((elem) => (
-        <article className="card" key={elem.id}>
-          <h3 className="card__title">{elem.title}</h3>
-         
-         <figure className="card__container">
-          <img className="card__image" src={elem.image} alt={elem.title} />
-          <h4 className="card__subtitle">{elem.category}</h4>
-          </figure>     
-          <p className="card__price">U$D {elem.price}</p>
-          <button className="card__button">Detalles</button>
-        </article>
-      ))}
-    </section>
+  return (
+    <>
+      {itemsFilter ? (
+        <FilterProducts loading={loading} items={itemsFilter} />
+      ) : (
+        <AllProducts loading={loading} data={data} />
+      )}
+    </>
   );
 }
 

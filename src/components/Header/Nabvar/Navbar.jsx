@@ -17,7 +17,7 @@ function Navbar() {
         )}
 
         {data.map((elem) => (
-          <NavbarItem key={elem} href={elem} content={elem} />
+          <NavbarItem key={elem} href={'category/' + elem} content={elem} />
         ))}
 
         

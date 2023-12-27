@@ -1,22 +1,16 @@
 import { useEffect, useState } from "react";
-//import { useParams } from "react-router";
-import useFetch from "./useFetch";
 
-function useFetchFilter({ urlFilter, ref }) {
-  const [items, setItems] = useState([]);
-
-
-  const { data } = useFetch(urlFilter);
+function useFetchFilter({ id, data }) {
+  const [itemsFilter, setItemsFilter] = useState([]);
 
   useEffect(() => {
-    const list = ref
-      ? data.filter((prod) => prod.category === ref)
+    const list = id
+      ? data.filter((prod) => prod.category === id)
       : console.log("error de carga en filtrado");
-
-    setItems(list);
-  }, [ref, data]);
-
-  return { items };
+console.log(list);
+    setItemsFilter(list);
+  }, [id, data]);
+  return { itemsFilter };
 }
 
 export default useFetchFilter;
