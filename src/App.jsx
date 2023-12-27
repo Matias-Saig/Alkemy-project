@@ -1,7 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
-import RouteNotFound from "./pages/RouteNotFound";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
             />
             <Route path="/item/:itemId" element='' />
 
-          <Route path="/not-found" element={<RouteNotFound />} />
+          <Route path="/not-found" element={<NotFound />} />
           <Route path="*" element={<Navigate to={"/not-found"} />} />
         </Routes>
       </BrowserRouter>

@@ -1,12 +1,8 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-
-function NavbarItem({href, content}) {
-
-  const local = useLocation().pathname;
-
+function NavbarItem({ href, content }) {
   return (
-    <Link to={href} className={`list__item ${local === href && "list__item--active" }`}>
+    <Link to={href} className={`list__item`}>
       {content}
     </Link>
   );

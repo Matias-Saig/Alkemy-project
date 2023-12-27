@@ -1,8 +1,7 @@
 import { useParams } from "react-router";
 import useFetch from "../../Hooks/useFetch";
 import useFetchFilter from "../../Hooks/useFetchFilter";
-import AllProducts from "../../components/Products/AllProducts";
-import FilterProducts from "../../components/Products/FilterProducts";
+import ProductsList from "../../components/Products/ProductsList";
 
 function Home() {
   const { data, loading } = useFetch("https://fakestoreapi.com/products");
@@ -22,9 +21,9 @@ function Home() {
   return (
     <>
       {itemsFilter ? (
-        <FilterProducts loading={loading} items={itemsFilter} />
-      ) : (
-        <AllProducts loading={loading} data={data} />
+        <ProductsList loading={loading} data={data} title={categoryId} />
+          ) : (
+            <ProductsList loading={loading} data={data} title="Estos son nuestros productos" />
       )}
     </>
   );

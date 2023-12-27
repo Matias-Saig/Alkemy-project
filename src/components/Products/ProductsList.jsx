@@ -1,14 +1,13 @@
 import Loading from "../Loading/Loading";
 
-
-function FilterProducts({loading, items}) {
+function ProductsList({ loading, data, title }) {
   return (
     
       <section className="list">
-        <h2 className="list__title">Categoria ...</h2>
+        <h2 className="list__title"> {title} </h2>
         {loading && <Loading type="text" />}
 
-        {items.map((elem) => (
+        {data.map((elem) => (
           <article className="card" key={elem.id}>
             <h3 className="card__title">{elem.title}</h3>
 
@@ -21,8 +20,8 @@ function FilterProducts({loading, items}) {
           </article>
         ))}
       </section>
-    
-  );
+   
+  )
 }
 
-export default FilterProducts;
+export default ProductsList;

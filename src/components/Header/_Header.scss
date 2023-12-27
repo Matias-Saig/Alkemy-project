@@ -36,16 +36,11 @@
       font-weight: bold;
       text-align: center;
       font-size: 1.1rem;
-             
+
       &:hover {
         background: var.$c-base_light;
         color: var.$c-active-breeze;
       }
-
-      &--active {
-        background: var.$c-active-breeze;
-      }
-
     }
   }
 }

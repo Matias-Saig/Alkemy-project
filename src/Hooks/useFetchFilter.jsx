@@ -7,7 +7,6 @@ function useFetchFilter({ id, data }) {
     const list = id
       ? data.filter((prod) => prod.category === id)
       : console.log("error de carga en filtrado");
-console.log(list);
     setItemsFilter(list);
   }, [id, data]);
   return { itemsFilter };

@@ -45,14 +45,14 @@
   }
 
   &__container {
-    @include mix.flex(row, nowrap, center, center);
+    @include mix.flex(column, nowrap, center, center);
     background: white;
     padding: 1rem 0;
     width: 100%;
 
     .card__image {
       object-fit: contain;
-      width: 15rem;
+      width: 80%;
       height: 15rem;
     }
   }

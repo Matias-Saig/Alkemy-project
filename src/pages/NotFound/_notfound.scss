@@ -1,0 +1,36 @@
+@use '../../style/mixin' as mix;
+@use '../../style/vars' as var;
+
+.not-found {
+@include mix.flex(column, null, center, center);
+
+&__link {
+    width: 60%;
+    text-align: center;
+    padding:2rem 0;
+    background: var.$c-active-breeze;
+    color: var.$c-light;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 1rem 0;
+    border-radius: 5px;
+    filter: var.$shadow;
+
+    &:hover {
+      background: var.$c-base_mid_light;
+      filter: drop-shadow(unset);
+      filter: var.$shadow-hover;
+    }
+}
+
+&__image {
+    width: 50%;
+    border: outset 10px var.$c-base_lighter;
+    filter: grayscale(50%);
+    margin: 2rem 0
+}
+
+
+}

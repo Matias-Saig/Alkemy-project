@@ -5,7 +5,7 @@ import NavbarItem from "./NavbarItem";
 function Navbar() {
   const { data, loading } = useFetch(
     "https://fakestoreapi.com/products/categories"
-  )
+  );
 
   return (
     <nav className="navbar">
@@ -17,10 +17,8 @@ function Navbar() {
         )}
 
         {data.map((elem) => (
-          <NavbarItem key={elem} href={'category/' + elem} content={elem} />
+          <NavbarItem key={elem} href={"/category/" + elem} content={elem} />
         ))}
-
-        
       </ul>
     </nav>
   );
