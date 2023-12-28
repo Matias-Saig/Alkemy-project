@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Loading from "../Loading/Loading";
 
 function ProductsList({ loading, data, title }) {
@@ -16,7 +17,7 @@ function ProductsList({ loading, data, title }) {
               <h4 className="card__subtitle">{elem.category}</h4>
             </figure>
             <p className="card__price">U$D {elem.price}</p>
-            <button className="card__button">Detalles</button>
+            <Link className="card__link" to={`/item/${elem.id}`}>Detalles</Link>
           </article>
         ))}
       </section>

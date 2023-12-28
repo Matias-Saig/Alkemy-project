@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function useFetchFilter({ id, data }) {
+function useFilter({ id, data }) {
   const [itemsFilter, setItemsFilter] = useState([]);
 
   useEffect(() => {
@@ -8,8 +8,9 @@ function useFetchFilter({ id, data }) {
       ? data.filter((prod) => prod.category === id)
       : console.log("error de carga en filtrado");
     setItemsFilter(list);
+    
   }, [id, data]);
   return { itemsFilter };
 }
 
-export default useFetchFilter;
+export default useFilter;
