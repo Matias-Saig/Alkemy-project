@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 function ProductsDetailsItem({ product }) {
+
+    
   const [numberDisplay, setNumberDisplay] = useState(0);
 
   const operSum = (e) => {
@@ -12,7 +13,8 @@ function ProductsDetailsItem({ product }) {
     numberDisplay >= 1 ? setNumberDisplay(numberDisplay - 1) : null;
   };
 
-  const operBuy = () => {};
+  const half = () => { alert("Final del camino... no hay carrito... :( ... ")}
+
 
   return (
     <section className="list">
@@ -41,7 +43,7 @@ function ProductsDetailsItem({ product }) {
               +
             </button>
           </div>
-          <Link className="product__link">Comprar</Link>
+          <button className="product__link" onClick={half}>Comprar</button>
           <p className="product__stock">Stock {elem[7]}</p>
         </article>
       ))}
