@@ -1,0 +1,14 @@
+// Colors
+
+$c-base: #27272c;
+$c-base_mid: #484b5f;
+$c-base_mid_light: #636782;
+$c-base_light: #d1d4de;
+$c-base_lighter: #d6d5db;
+$c-light: #e9e9eb;
+$c-active-breeze: #3d6198;
+$c-active-sun: #f9b17a;
+
+// shadow
+$shadow: drop-shadow(0 3px 5px #aaa);
+$shadow-hover: drop-shadow(0 3px 5px $c-base_mid_light);

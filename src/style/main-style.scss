@@ -1,0 +1,12 @@
+// Base
+@forward './reset';
+@forward './main';
+
+// componentes
+@forward '../components/Header/Header'; 
+@forward '../components/Loading/loading';
+@forward '../components/Products/Products';
+
+// pages
+@forward '../pages/Home/Home';
+@forward '../pages/NotFound/Notfound'

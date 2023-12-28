@@ -1,0 +1,20 @@
+@use "../../style/vars" as var;
+@use "../../style/mixin" as mix;
+
+.list {
+  @include mix.flex(row, wrap, center, stretch);
+  padding: 2rem;
+  gap: 2.5rem;
+  background: var.$c-base_mid;
+
+  &__title {
+    width: 80%;
+    text-align: center;
+    font-size: 2.5rem;
+    color: var.$c-light;
+    padding-bottom: 0.5rem;
+    border-bottom: dashed 2px var.$c-base_mid_light;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+}
